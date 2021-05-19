@@ -23,7 +23,6 @@ def dropItem():
         else:
             whichTier = 0 #nem kapunk itemet
 
-
 def addMoney():
     money += 30
 
@@ -38,5 +37,3 @@ itemLevels = {
     "luck":1
 }
 ownedItems = []
-
-print(rnd.randInt(0, 100))
