@@ -7,13 +7,16 @@ import random as rnd
 #az item jelenlegi szintje - akkor tér el egytől ha már birtokoljuk és fejlesztettük is
 #item alapára - ezt fogjuk szorozni mindig, amikor fejlesztjük
 #item alap buff-ja - ezt fogjuk szorozni, amikor fejlesztjük
-#a tiert az item sorszáma, a szorzóját a tiere határozza meg
+#item szorzója
+#a tiert az item sorszáma határozza meg
 
-def upgrade(): #gomb lenyomásakor hívjuk meg
-    pass
 
-def dropItem():
-    if (bossalive = False): #ezt az ifet kivesszük, ha készen lesz az a függvény, ami a boss halálakor meghívja ezt a függvényt
+def upgrade(allItems, allItemsDefaultCost, allItemsDefaultBuff, itemNumberInput, money): #gomb lenyomásakor hívjuk meg
+    if (money > allItemsDefaultCost[itemNumberInput] * allItemsCurrentLevel[itemNumberInput] * allItemsDefaultMultiplier[itemNumberInput]):
+        pass
+
+def dropItem(bossAlive, dropResult, dropChance, ownedItems):
+    if (bossAlive = False): #ezt az ifet kivesszük, ha készen lesz az a függvény, ami a boss halálakor meghívja ezt a függvényt
         dropResult = rnd.randInt(0,100)
         if (dropResult <= dropChance[2]):
             if (dropResult <= dropChance[1]):
@@ -33,4 +36,10 @@ dropChance = [5, 35, 85] #az első szám a tier 3 drop chance-e, a második a ti
 dropResult = 0
 bossAlive = True
 money = 0
-ownedItems = []  
+ownedItems = []
+allItemsCurrentLevel = []
+allItems = []
+allItemsDefaultCost = []
+allItemsDefaultBuff = []
+allItemsDefaultMultiplier = []
+itemNumberInput = 0
